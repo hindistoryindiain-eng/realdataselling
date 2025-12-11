@@ -59,14 +59,17 @@ const Wallet = () => {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-6">
         <div className="text-center animate-success">
-          <div className="w-32 h-32 rounded-full gradient-success flex items-center justify-center mx-auto shadow-success">
+          <div className="w-32 h-32 rounded-full gradient-success flex items-center justify-center mx-auto shadow-success animate-bounce">
             <CheckCircle2 className="w-16 h-16 text-success-foreground" />
           </div>
-          <h2 className="text-2xl font-bold text-foreground mt-6">Payment Successful!</h2>
-          <p className="text-muted-foreground mt-2">₹{amount} has been transferred</p>
-          <p className="text-success font-semibold mt-1">
+          <h2 className="text-2xl font-bold text-foreground mt-6 animate-fade-in">Withdrawal Request Submitted!</h2>
+          <p className="text-muted-foreground mt-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>₹{amount} withdrawal initiated</p>
+          <p className="text-success font-semibold mt-1 animate-fade-in" style={{ animationDelay: '0.3s' }}>
             {paymentMethod === "upi" ? upiId : `A/C: ${bankDetails.account}`}
           </p>
+          <div className="mt-4 p-3 bg-primary/10 rounded-xl animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <p className="text-primary font-medium text-sm">💰 Payment will be credited within 5-7 business days</p>
+          </div>
         </div>
       </div>
     );
